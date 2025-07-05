@@ -28,22 +28,29 @@ struct ExchangeInfo: View {
                     .padding()
                 
                 // Exchange rates
-                HStack {
-                    // Left currency image
-                    Image(.goldpiece)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 33)
-                    
-                    // Exchange rate text
-                    Text("1 Gold Piece = 4 Gold Pennies")
-                    
-                    // Right currency image
-                    Image(.goldpenny)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 33)
-                }
+                ExchangeRate(
+                    lefImage: .goldpiece,
+                    text: "1 Gold Piece = 1 Gold Pennies",
+                    rightImage: .goldpenny
+                )
+                
+                ExchangeRate(
+                    lefImage: .goldpenny,
+                    text: "1 Gold Penny = 4 Silver Pieces",
+                    rightImage: .silverpiece
+                )
+                
+                ExchangeRate(
+                    lefImage: .silverpiece ,
+                    text: "1 Silver Piece = 4 Silver Pennies",
+                    rightImage: .silverpenny
+                )
+                
+                ExchangeRate(
+                    lefImage: .silverpenny ,
+                    text: "1 Silver Penny = 100 Copper Pennies",
+                    rightImage: .copperpenny
+                )
                 
                 // Done Button
                 Button("Done") {
@@ -63,3 +70,5 @@ struct ExchangeInfo: View {
 #Preview {
     ExchangeInfo()
 }
+
+
